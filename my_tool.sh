@@ -83,9 +83,11 @@ do
 			showip
 			wait;; 
 		2)
-			changemac ;;
+			changemac 
+			wait;;
 		3)	
-			nmapscan ;;
+			nmapscan 
+			wait;;
 		99)
 			fexit;;
 	esac
