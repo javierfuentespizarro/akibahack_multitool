@@ -7,8 +7,9 @@
 
 #Option wait
 function wait() {
-	read -p $'Press a key to continue...' wait 
+	read -p $'\e[1;92mPress a key to continue...\e[0m \n' wait 
 }
+
 #Option 99 - Exit
 
 function fexit() {
