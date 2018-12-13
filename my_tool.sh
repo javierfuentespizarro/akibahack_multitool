@@ -4,6 +4,11 @@
 #Github: https://github.com/javierfuentespizarro
 
 #Funciones de las opciones
+
+#Option wait
+function wait() {
+	read -p $'Press a key to continue...' wait 
+}
 #Option 99 - Exit
 
 function fexit() {
@@ -74,14 +79,13 @@ do
 	read option
 	case $option in
 		1)
-			showip;; 
+			showip
+			wait;; 
 		2)
 			changemac ;;
 		3)	
 			nmapscan ;;
 		99)
 			fexit;;
-		*)
-			printf "Press a key to continue..." ;;
 	esac
 done
